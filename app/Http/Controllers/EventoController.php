@@ -47,6 +47,9 @@ class EventoController extends Controller
         $evento->data_evento = $request->data;
         $evento->hora_evento = $request->hora;
         $evento->local_evento = $request->local;
+        $evento->descricao = $request->descricao;
+        $evento->imagem = $request->imagem;
+        $evento->rede_social = $request->rede_social;
         $evento->categoria = $request->categoria;
         $evento->save();
         return response()->json($evento);
