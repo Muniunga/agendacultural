@@ -10,4 +10,10 @@ class EventoModel extends Model
     use HasFactory;
     protected $table = 'eventos';
     protected $fillable = ['nome', 'local_evento', 'data_evento', 'hora_evento', 'categoria'];
+
+
+    public function categoria()
+    {
+        return $this->belongsTo(CategoriaModel::class, 'categoria');
+    }
 }
