@@ -46,6 +46,9 @@ class CategoriaController extends Controller
     public function destroy($id)
     {
         $categoria = CategoriaModel::find($id);
+        if (!$categoria) {
+            return response()->json(['message' => 'Categoria não encontrada'], 404);
+        }
         $categoria->delete();
         return response()->json(['message' => 'Categoria eliminada com sucesso'], 404);
     }
