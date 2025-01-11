@@ -12,8 +12,9 @@ class GeralController extends Controller
     //
     public function index(){
         $data['title'] = 'Home';
-        $data['eventos']= EventoModel::with('categoria')->get();
-        // $data['categorias']= CategoriaModel::all();
+        $data['eventos'] = EventoModel::getEvento();
+        $data['hasResults'] = $data['eventos']->count() > 0;
+        $data['categorias']= CategoriaModel::all();
         // dd($data['eventos'][0]->categoria->nome);
         return view('welcome', $data);
     }

@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('descricao');
-            $table->string('imagem');
-            $table->string('rede_social');
+            $table->string('imagem')->nullable();
+            $table->string('rede_social')->nullable();
             $table->string('local_evento');
             $table->date('data_evento');
             $table->time('hora_evento');

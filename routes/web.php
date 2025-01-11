@@ -20,14 +20,14 @@ Route::get('/login', function () {
     return view('auth.login');
 });
 
-Route::get('/', [GeralController::class, 'index']);
+Route::get('/', [GeralController::class, 'index'])->name('home');
 Route::get('/admin/dashboard', [GeralController::class, 'gestao']);
 
 Route::get('/admin/eventos', [GeralController::class, 'evento']);
 Route::get('/admin/eventos/create', [EventoController::class, 'create']);
 Route::post('/admin/eventos/create', [EventoController::class, 'store']);
 Route::get('/admin/eventos/edit/{id}', [EventoController::class, 'edit']);
-Route::put('/admin/eventos/edit/{id}', [EventoController::class, 'update']);
+Route::post('/admin/eventos/edit/{id}', [EventoController::class, 'update']);
 Route::get('/admin/eventos/delete/{id}', [EventoController::class, 'destroy']);
 
 Route::get('/admin/categorias', [GeralController::class, 'categoria']);

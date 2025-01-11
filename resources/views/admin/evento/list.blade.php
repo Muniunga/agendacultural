@@ -84,7 +84,7 @@
                                             <a href="{{ url('admin/eventos/delete/'.$evento->id) }}" data-toggle="modal" data-target="#modal-danger" class="btn btn-danger"><i class="fas fa-trash"></i></i></a>
                                         </td>
                                     </tr>
-                                    @endforeach
+
                                     <!-- /.modal -->
 
                                     <div class="modal fade" id="modal-danger">
@@ -109,6 +109,7 @@
                                         <!-- /.modal-dialog -->
                                     </div>
                                     <!-- /.modal -->
+                                    @endforeach
                                 </tbody>
                             </table>
 
