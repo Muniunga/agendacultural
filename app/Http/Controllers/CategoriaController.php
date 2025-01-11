@@ -15,7 +15,7 @@ class CategoriaController extends Controller
 
     public function create()
     {
-        return view('categoria.create');
+        return view('admin.categoria.create');
     }
 
     public function store(Request $request)
@@ -23,13 +23,15 @@ class CategoriaController extends Controller
         $categoria = new CategoriaModel();
         $categoria->nome = $request->nome;
         $categoria->save();
-        return response()->json($categoria);
+        // return response()->json($categoria);
+        return redirect('admin/categorias');
     }
 
     public function edit($id)
     {
         $categoria = CategoriaModel::find($id);
-        return view('categoria.edit', compact('categoria'));
+        // dd($categoria);
+        return view('admin.categoria.edit',compact('categoria'));
     }
 
     public function update(Request $request, $id)
@@ -40,7 +42,8 @@ class CategoriaController extends Controller
         }
         $categoria->nome = $request->nome;
         $categoria->save();
-        return response()->json($categoria);
+        // return response()->json($categoria);
+        return redirect('admin/categorias' );
     }
 
     public function destroy($id)
@@ -50,6 +53,6 @@ class CategoriaController extends Controller
             return response()->json(['message' => 'Categoria não encontrada'], 404);
         }
         $categoria->delete();
-        return response()->json(['message' => 'Categoria eliminada com sucesso'], 404);
+        return redirect('admin/categorias');
     }
 }

@@ -16,7 +16,7 @@ class EventoController extends Controller
 
     public function create()
     {
-        return view('evento.create');
+        return view('admin.evento.create');
     }
 
     public function store(Request $request)
@@ -34,7 +34,7 @@ class EventoController extends Controller
     public function edit($id)
     {
         $evento = EventoModel::find($id);
-        return view('evento.edit', compact('evento'));
+        return view('admin.evento.edit', compact('evento'));
     }
 
     public function update(Request $request, $id)
